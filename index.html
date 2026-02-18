@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nebula Weather · Desktop Edition</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark">
+    <div class="starfield" id="starfield"></div>
+    
+    <div class="nebula"></div>
+    <div class="nebula-2"></div>
+
+    <div class="cosmic-container">
+        <header class="cosmic-header">
+            <div class="logo">
+                <span class="logo-icon">🌌</span>
+                <h1>Nebula Weather</h1>
+            </div>
+            <div class="theme-toggle" id="themeToggle">
+                <span class="toggle-icon" id="toggleIcon">🌙</span>
+                <span id="toggleLabel">Cosmic Dark</span>
+            </div>
+        </header>
+
+        <!-- Search Section -->
+        <div class="search-galaxy">
+            <div class="search-orbit">
+                <span class="search-icon">🔭</span>
+                <input type="text" id="cityInput" placeholder="Search cosmic coordinates..." value="Bengaluru">
+            </div>
+            <button id="getLocation" class="location-pulse">
+                <span>📍</span> Use My Location
+            </button>
+        </div>
+
+        <div class="dashboard-grid">
+            <div class="primary-card">
+                <div class="location-tag">
+                    <h2 class="planet-name" id="cityName">Bengaluru</h2>
+                    <div class="time-orbit" id="dateTime"></div>
+                </div>
+
+                <div class="temp-display">
+                    <div class="temp-number">
+                        <span class="current-temp" id="temp">--</span>
+                        <span class="temp-symbol">°C</span>
+                    </div>
+                    <div class="weather-vibe">
+                        <img id="weatherIcon" class="weather-icon-large" src="https://openweathermap.org/img/wn/02d@4x.png" alt="weather">
+                        <div class="vibe-text" id="description">Clear Sky</div>
+                        <div class="feels-like" id="feelsLike">Feels like: --°</div>
+                    </div>
+                </div>
+
+                <div class="cosmic-metrics">
+                    <div class="metric-item">
+                        <div class="metric-label">Wind</div>
+                        <div class="metric-value" id="wind">--<span class="metric-unit">m/s</span></div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-label">Humidity</div>
+                        <div class="metric-value" id="humidity">--<span class="metric-unit">%</span></div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-label">Visibility</div>
+                        <div class="metric-value" id="visibility">--<span class="metric-unit">km</span></div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-label">Pressure</div>
+                        <div class="metric-value" id="pressure">--<span class="metric-unit">hPa</span></div>
+                    </div>
+                </div>
+
+                <div class="sun-orbit" id="sunTimes">
+                    <div class="sun-card">
+                        <span class="sun-emoji">🌅</span>
+                        <div class="sun-info">
+                            <div class="sun-label">Sunrise</div>
+                            <div class="sun-time">--:--</div>
+                        </div>
+                    </div>
+                    <div class="sun-card">
+                        <span class="sun-emoji">🌇</span>
+                        <div class="sun-info">
+                            <div class="sun-label">Sunset</div>
+                            <div class="sun-time">--:--</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="nebula-sidebar">
+                <div class="nebula-card" id="airQualityCard" style="display: none;">
+                    <div class="card-header">
+                        <span class="header-icon">🌬️</span>
+                        <h3>Air Quality</h3>
+                    </div>
+                    <div id="airQualityContent"></div>
+                </div>
+
+                <div class="nebula-card" id="uvCard" style="display: none;">
+                    <div class="card-header">
+                        <span class="header-icon">☀️</span>
+                        <h3>UV Index</h3>
+                    </div>
+                    <div id="uvContent"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="forecast-nebula">
+            <div class="forecast-title">
+                <span class="header-icon">📡</span>
+                <h2>7-Day Space Forecast</h2>
+            </div>
+            <div class="forecast-carousel" id="forecastGrid"></div>
+        </div>
+    </div>
+
+    <div class="cosmic-loader" id="loadingOverlay">
+        <div class="loader-ring"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
